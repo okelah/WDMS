@@ -81,24 +81,32 @@ The WDMS (Web Document Management System) is a website which can be accessed ove
 
  The first thing we must do is access the website.  To so this open your web-browser (Internet Explorer or FireFox or Chrome, etc.) and type into your address bar the following ‘https://10.0.2.111’.  The website should appear with a welcome screen for the WDMS.  If you don’t see the website refer to section B of the appendix under ‘Trouble-shooting and limitations’.
  
- ###2. Creating a new account
+ ###3. Creating a new account
 ======
 
  * #####Finding the account creation page
 
   Now that you have accessed the website, we will need to get some details form you in order to create your account.  On the webpage you will notice that in the upper right hand of the screen there is a button labeled “Log in”.  Click this button once.  Two new options have appeared, one is to log-in to an existing account, and the second is to create a new account.  Click the button “create a new account”.
+  ![alt tag](https://github.com/biubiuX/WDMS/blob/master/pic/1.jpg)
 
- * #####Introduction to the system
+ * #####Filling in account details & requesting permissions
 
-The WDMS (Web Document Management System) is a website which can be accessed over the internet from any location, and at any time of the day or night.  The system (WDMS) will hold your documents, and allow you to share these documents with others including responsible department managers and corporate level users.  To use this system you must first have a computer with access to the internet.  If you are working with large documents, it is recommended that you use a good internet connection, or performance may be degraded.
+ At this point you are asked for your email address.  This is the email address which you will use the log-in to the system in the future.  You are asked to create a password which conforms to the password policy. Password should be alplhanumeric. It must contain 8-16 characters, with no whitespaces, and at least 1 lowercase & 1 upper case & 1 non-alphanumeric characters.  A third option is also present which asks what your role is in the organization.    This is necessary so that we can assign you the proper rights and permissions as designated by your role. Also the department to which the user belongs is selected from the drop downlist. Finally the captcha needs to be entered.  When you have finished entering all your data, click the button at the bottom of the page labeled “Create my account”.  This will send your request to the administrator who will approve or deny it as soon as possible.  For now you must wait until your account has been approved before you can do anything.
+ ![alt tag](https://github.com/biubiuX/WDMS/blob/master/pic/2.jpg)
+ 
+ 
+ ###4. Logging into and out of the system
+======
 
- * #####Terminology used in the system
+ * #####Prerequisites
 
-  WDMS – Web Document Management System
-  This is the system which this user guide is introducing you to.
+  At this stage you must have already created an account. And the account is approved by the system administrator
+
+ * #####Logging-in
+
+  Look at the top right hand of the webpage, there should be a button labeled “Log in / Create Account”, click that button.  Two new options have appeared, you will be using the first one, which is to log into an existing account.  Type in your email and password, then click the button labeled “Login”.  A new webpage should load.  Look in the top right hand corner of the screen where you previously saw the “Log in” button.  That button has been replaced with one labeled with your email address.
   
- * #####Accessing the website
+   * #####Logging-out
 
- The first thing we must do is access the website.  To so this open your web-browser (Internet Explorer or FireFox or Chrome, etc.) and type into your address bar the following ‘https://10.0.2.111’.  The website should appear with a welcome screen for the WDMS.  If you don’t see the website refer to section B of the appendix under ‘Trouble-shooting and limitations’.
- 
- 
+  Look at the top right hand of the webpage, there should be a button labeled with your email address, click that button.  A list of new options have appeared.  Click the option labeled “Log out”.  The page should return you to the login screen.
+
