@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- Use @Component annotations for bean definitions -->
+	<context:component-scan base-package="controller" />
+
+	<!-- Use @Controller annotations for MVC controller definitions -->
+	<mvc:annotation-driven />
+
+	<!-- View resolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/assets/" mapping="/assets/**" />
+
+	<bean id="login" class="DAO.Login">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="logger" class="DAO.Logger">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="doc" class="DAO.Document">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="dir" class="DAO.Directory">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="authorization" class="DAO.Authorization">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="Register" class="DAO.Register">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="userDAO" class="DAO.UserDAO">
+		<property name="dbWrapper" ref="dbWrapper" />
+	</bean>
+
+	<bean id="dbWrapper" class="DAO.DBWrapper">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="root" />
+		<property name="password" value="NUswA3Wu" />
+	</bean>
+	
+	<bean id="tempDbWrapper" class="DAO.DBWrapper">
+		<property name="dataSource" ref="tempDataSource" />
+	</bean>
+	
+	<bean id="tempDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="temporary" />
+		<property name="password" value="9uvEhaPh" />
+	</bean>
+	
+	<bean id="sysadminDbWrapper" class="DAO.DBWrapper">
+		<property name="dataSource" ref="sysadminDataSource" />
+	</bean>
+	
+	<bean id="sysadminDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="systemadmin" />
+		<property name="password" value="qabuT4uC" />
+	</bean>
+	
+	<bean id="regularDbWrapper" class="DAO.DBWrapper">
+		<property name="dataSource" ref="regularDataSource" />
+	</bean>
+	
+	<bean id="regularDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="regularguest" />
+		<property name="password" value="xubU7eTU" />
+	</bean>
+	
+	<bean id="mgmtDbWrapper" class="DAO.DBWrapper">
+		<property name="dataSource" ref="mgmtDataSource" />
+	</bean>
+	
+	<bean id="mgmtDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="management" />
+		<property name="password" value="Zux9gafr" />
+	</bean>
+
+</beans>
